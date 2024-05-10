@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Stack elements vertically */
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to bottom, #09203F, #537895); /* Linear gradient background */
+            font-family: 'Poppins', sans-serif; /* Apply Google Font */
+        }
+
+        .heading {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .heading h1 {
+            font-size: 36px; /* Increase font size */
+            color: #fff; /* Change text color */
+            text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .card, .card1 {
+          background-image: linear-gradient(to bottom, #FFECD2,  #FCB69F);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card h1, .card1 b {
+            font-size: 24px; /* Specify font size */
+        }
+
+        .card:hover, .card1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for hover effect */
+        .card:hover .card1 {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+
+        .card1:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>This is result page</h1>
+  </div>
+    <div class="card">
+        <h1>Total number of questions={{total}}</h1>
+        <h1>Total number of correct attempt={{correct}}</h1>
+        <h1>Total number of wrong attempt={{wrong}}</h1>
+        <h1>Result percentage={{percentage}}</h1>
+    </div>
+    <div class="card1">
+        <b><a href="{% url 'user:homepage' %}" style="text-decoration: none; color: #333;">Go back to home page</a></b><br><br>
+        <b><a href="{% url 'user:logout' %}" style="text-decoration: none; color: #333;">Logout</a></b>
+    </div>
+</body>
+</html>
