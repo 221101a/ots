@@ -20,4 +20,5 @@ from django.conf.urls import include
 urlpatterns = [
     path("ots/",include("online_test.urls")),
     path("admin/", admin.site.urls),
+    path("",views.welcome,name='welcome'),
 ]
